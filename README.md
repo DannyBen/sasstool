@@ -2,7 +2,7 @@ Sasstool
 ==================================================
 
 [![Gem Version](https://badge.fury.io/rb/sasstool.svg)](https://badge.fury.io/rb/sasstool)
-[![Build Status](https://travis-ci.com/DannyBen/sasstool.svg?branch=master)](https://travis-ci.com/DannyBen/sasstool)
+[![Build Status](https://github.com/DannyBen/sasstool/workflows/Test/badge.svg)](https://github.com/DannyBen/sasstool/actions?query=workflow%3ATest)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4cef96eefe9287ab6c90/maintainability)](https://codeclimate.com/github/DannyBen/sasstool/maintainability)
 
 ---
