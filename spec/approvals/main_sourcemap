@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"main.scss",
+		"dir/headings.scss",
+		"dir/subdir/form.scss"
+	],
+	"sourcesContent": [
+		"* { \n  font-family: arial;\n}\n\na {\n  &.button {\n    background: blue;\n    display: inline-block;\n    padding: 20px;\n  }\n}\n\n@import 'dir/*';\n@import 'dir/subdir/*';\n",
+		"h1 {\n  font-size: 30px;\n}\n\n\n",
+		"form {\n  border: 1px solid #ccc;\n}"
+	],
+	"names": [],
+	"mappings": "..."
+}

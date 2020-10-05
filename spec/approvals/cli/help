@@ -1,0 +1,3 @@
+Usage:
+  sasstool INFILE [OUTDIR --watch]
+  sasstool (-h|--help)
