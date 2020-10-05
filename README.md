@@ -3,6 +3,7 @@ Sasstool
 
 [![Gem Version](https://badge.fury.io/rb/sasstool.svg)](https://badge.fury.io/rb/sasstool)
 [![Build Status](https://travis-ci.com/DannyBen/sasstool.svg?branch=master)](https://travis-ci.com/DannyBen/sasstool)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4cef96eefe9287ab6c90/maintainability)](https://codeclimate.com/github/DannyBen/sasstool/maintainability)
 
 ---
 
