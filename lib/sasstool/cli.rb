@@ -5,12 +5,9 @@ require_relative 'command'
 module Sasstool
   class CLI
     def self.router
-      router = MisterBin::Runner.new version: VERSION,
-        header: "SASS Tool"
-
-      router.route_all to: Command
-
-      router
+      MisterBin::Runner.new version: VERSION,
+        header: "SASS Tool",
+        handler: Command
     end
   end
 end
