@@ -1,5 +1,4 @@
-Sasstool
-==================================================
+# Sasstool
 
 [![Gem Version](https://badge.fury.io/rb/sasstool.svg)](https://badge.fury.io/rb/sasstool)
 [![Build Status](https://github.com/DannyBen/sasstool/workflows/Test/badge.svg)](https://github.com/DannyBen/sasstool/actions?query=workflow%3ATest)
@@ -11,15 +10,18 @@ Sass (SassC) command line renderer with globbing import support.
 
 ---
 
-Installation
---------------------------------------------------
+## Installation
 
     $ gem install sasstool
 
 
 
-Usage
---------------------------------------------------
+## Usage
+
+You can use Sasstool from the command line, or from within ruby code.
+
+
+### Rendering from the command line
 
 ```
 $ sasstool --help
@@ -52,3 +54,27 @@ Examples:
   sasstool style/main.scss public/css
 
 ```
+
+### Rendering from Ruby code
+
+```ruby
+sass = Sasstool::Renderer.new 'path/to/main.scss'
+
+# Get the CSS string
+sass.render
+
+# Get the source map string
+sass.source_map
+
+# Save both CSS and source map
+sass.save 'target/directory'
+```
+
+## Contributing / Support
+
+If you experience any issue, have a question or a suggestion, or if you wish
+to contribute, feel free to [open an issue][issues].
+
+---
+
+[issues]: https://github.com/DannyBen/sasstool/issues
