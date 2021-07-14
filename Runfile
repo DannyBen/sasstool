@@ -1,6 +1,7 @@
 require "runfile-tasks"
 require "byebug"
 require_relative 'lib/sasstool'
+require_relative 'lib/sasstool/version'
 
 title   "Sasstool Developer Toolbelt"
 summary "Runfile tasks for building the Sasstool gem"
