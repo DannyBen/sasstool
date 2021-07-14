@@ -16,19 +16,35 @@ module Sasstool
       File.write "#{name}.map", source_map
     end
 
+    def sass?
+      path.end_with? 'sass'
+    end
+
+    def to_scss
+      SassC::Sass2Scss.convert file_content
+    end
+
   private
 
     def basename
-      @basename ||= File.basename(path).gsub(/scss$/, 'css')
+      @basename ||= File.basename(path).gsub(/s[ca]ss$/, 'css')
+    end
+
+    def file_content
+      @file_content ||= File.read(path)
     end
 
     def scss_content
-      scss_content ||= File.read(path)
+      @scss_content ||= scss_content!
+    end
+
+    def scss_content!
+      sass? ? to_scss : file_content
     end
 
     def options
       @options ||= {
-        source_map_file: "#{path.gsub(/scss$/, 'css')}.map",
+        source_map_file: "#{path.gsub(/s[ca]ss$/, 'css')}.map",
         source_map_contents: true,
         style: :nested,
         importer: Importer,

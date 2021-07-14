@@ -4,7 +4,9 @@ module Sasstool
       if path.include? "*"
         dir = File.dirname parent_path
         glob = "#{dir}/#{path}"
-        files = Dir[glob].select { |file| File.extname(file) == '.scss' }
+        files = Dir[glob].select do |file|
+          ['.scss', '.sass'].include? File.extname(file)
+        end
 
         files.map do |file|
           Import.new File.expand_path(file)

@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"main.sass",
+		"dir/headings.sass",
+		"dir/subdir/form.sass"
+	],
+	"sourcesContent": [
+		"* { font-family: arial; }a { &.button { background: blue;display: inline-block;padding: 20px; } }@import 'dir/*';@import 'dir/subdir/*';",
+		"h1 {\n  font-size: 30px; }\n",
+		"form {\n  border: 1px solid #ccc; }\n"
+	],
+	"names": [],
+	"mappings": "..."
+}
