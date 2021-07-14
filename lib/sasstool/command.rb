@@ -6,7 +6,7 @@ module Sasstool
     usage "sasstool INFILE [OUTDIR --watch]"
     usage "sasstool (-h|--help)"
     
-    param "INFILE", "Path to SCSS input file"
+    param "INFILE", "Path to SCSS or SASS input file"
     param "OUTDIR", "Path to CSS output directory. Can also be provided by an environment variable"
     option "-w, --watch", "Watch the directory of the input file, and save on change"
     environment "SASSTOOL_OUTDIR", "Path to CSS output directory"
@@ -22,7 +22,7 @@ module Sasstool
 
     def watch
       dir = File.dirname args['INFILE']
-      glob = "#{dir}/**/*.scss"
+      glob = "#{dir}/**/*.s[ca]ss"
       Filewatcher.new(glob).watch do
         save
       end

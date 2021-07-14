@@ -15,7 +15,6 @@ Sass (SassC) command line renderer with globbing import support.
     $ gem install sasstool
 
 
-
 ## Usage
 
 You can use Sasstool from the command line, or from within ruby code.
@@ -40,7 +39,7 @@ Options:
 
 Parameters:
   INFILE
-    Path to SCSS input file
+    Path to SCSS or SASS input file
 
   OUTDIR
     Path to CSS output directory. Can also be provided by an environment
@@ -54,6 +53,7 @@ Examples:
   sasstool style/main.scss public/css
 
 ```
+
 
 ### Rendering from Ruby code
 
@@ -70,6 +70,7 @@ sass.source_map
 sass.save 'target/directory'
 ```
 
+
 ## Contributing / Support
 
 If you experience any issue, have a question or a suggestion, or if you wish
@@ -78,3 +79,4 @@ to contribute, feel free to [open an issue][issues].
 ---
 
 [issues]: https://github.com/DannyBen/sasstool/issues
+
