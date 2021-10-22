@@ -47,9 +47,11 @@ describe Command do
 
   context "with --watch" do
     let(:filewatcher) { double :filewatcher, watch: nil }
+    let(:renderer) { double :renderer, save: nil }
 
     it "watches and saves on change" do
-      expect_any_instance_of(Renderer).to receive(:save).twice
+      expect(Renderer).to receive(:new).twice.and_return(renderer)
+      expect(renderer).to receive(:save).twice
       expect_any_instance_of(Filewatcher).to receive(:watch).and_yield
       subject.run [infile, outdir, "--watch"]
     end    
