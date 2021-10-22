@@ -34,7 +34,7 @@ module Sasstool
     end
 
     def renderer
-      @renderer ||= Renderer.new(args['INFILE'])
+      Renderer.new args['INFILE']
     end
 
     def outdir
