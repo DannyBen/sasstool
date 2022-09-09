@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'mister_bin', '~> 0.7'
   s.add_dependency 'colsole', '~> 0.7'
   s.add_dependency 'sassc', '~> 2.4'
-  s.add_dependency 'filewatcher', '~> 1.1'
+  s.add_dependency 'filewatcher', '~> 2.0'
 end
