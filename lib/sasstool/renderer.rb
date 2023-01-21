@@ -44,11 +44,11 @@ module Sasstool
 
     def options
       @options ||= {
-        source_map_file: "#{path.gsub(/s[ca]ss$/, 'css')}.map",
+        source_map_file:     "#{path.gsub(/s[ca]ss$/, 'css')}.map",
         source_map_contents: true,
-        style: :nested,
-        importer: Importer,
-        filename: path
+        style:               :nested,
+        importer:            Importer,
+        filename:            path,
       }
     end
 
@@ -57,4 +57,3 @@ module Sasstool
     end
   end
 end
-
