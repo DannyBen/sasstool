@@ -20,5 +20,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'filewatcher', '~> 2.0'
   s.add_dependency 'mister_bin', '~> 0.7'
   s.add_dependency 'sassc', '~> 2.4'
+
   s.metadata['rubygems_mfa_required'] = 'true'
 end
