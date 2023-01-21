@@ -6,7 +6,7 @@ module Sasstool
   class CLI
     def self.router
       MisterBin::Runner.new version: VERSION,
-        header: "SASS Tool",
+        header: 'SASS Tool',
         handler: Command
     end
   end
