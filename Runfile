@@ -1,18 +1,8 @@
-require "runfile-tasks"
 require "byebug"
-require_relative 'lib/sasstool'
-require_relative 'lib/sasstool/version'
+require 'sasstool/version'
 
 title   "Sasstool Developer Toolbelt"
 summary "Runfile tasks for building the Sasstool gem"
 version Sasstool::VERSION
 
-RunfileTasks::RubyGems.all 'sasstool'
-RunfileTasks::Testing.rspec
-
-help   "Run interactive console"
-action :console, :c do
-  system "bundle exec bin/console"
-end
-
-require_relative 'debug.rb' if File.exist? 'debug.rb'
+import_gem 'runfile-tasks/gem', gemname: 'sasstool'
