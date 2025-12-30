@@ -47,10 +47,5 @@ module Sasstool
     def listener(dir, glob, &)
       Listen.to(dir, force_polling: true, latency: 3, only: glob, &)
     end
-
-    def block_if_needed
-      @block_thread ||= Thread.current
-      @block_thread.join if @block_thread != Thread.current
-    end
   end
 end
