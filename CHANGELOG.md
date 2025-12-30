@@ -1,6 +1,13 @@
 Changelog
 ========================================
 
+v0.3.1 - 2025-12-30
+----------------------------------------
+
+- Fix file watch [`51320f8`](https://github.com/dannyben/sasstool/commit/51320f8)
+- Compare [`v0.3.0..v0.3.1`](https://github.com/dannyben/sasstool/compare/v0.3.0..v0.3.1)
+
+
 v0.3.0 - 2025-12-30
 ----------------------------------------
 
