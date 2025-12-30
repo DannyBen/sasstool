@@ -1,5 +1,6 @@
 require 'mister_bin'
 require 'sasstool'
+require 'sasstool/version'
 require_relative 'command'
 
 module Sasstool
