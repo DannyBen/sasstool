@@ -21,7 +21,7 @@ module Sasstool
   private
 
     def watch
-      dir = @dir ||= File.dirname(args["INFILE"])
+      dir = @dir ||= File.dirname(args['INFILE'])
       glob = /\.s[ca]ss\z/
       l = listener(dir, glob) { save }
       l.start
@@ -44,8 +44,8 @@ module Sasstool
       result
     end
 
-    def listener(dir, glob, &block)
-      Listen.to(dir, force_polling: true, latency: 3, only: glob, &block)
+    def listener(dir, glob, &)
+      Listen.to(dir, force_polling: true, latency: 3, only: glob, &)
     end
 
     def block_if_needed

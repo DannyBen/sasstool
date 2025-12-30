@@ -9,5 +9,10 @@ inherit_gem:
 
 AllCops:
   TargetRubyVersion: 3.2
+  SuggestExtensions: false
   Exclude:
     - dev/**/*
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/sasstool/command_spec.rb'

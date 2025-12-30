@@ -50,10 +50,10 @@ describe Command do
     let(:listener) { double(:listener, start: nil) }
     let(:glob) { 'spec/fixtures/scss/**/*.s[ca]ss' }
 
-    it 'watches and saves on change', :focus do
+    it 'watches and saves on change' do
       callback = nil
 
-      expect(Listen).to receive(:to) do |*args, &block|
+      expect(Listen).to receive(:to) do |*_args, &block|
         callback = block
         listener
       end
@@ -62,10 +62,10 @@ describe Command do
       expect(Renderer).to receive(:new).twice.and_return(renderer)
       expect(renderer).to receive(:save).twice
 
-      expect {
+      expect do
         subject.run [infile, outdir, '--watch']
         callback.call([], [], [])
-      }.to output_approval "watch"
+      end.to output_approval 'watch'
     end
   end
 end

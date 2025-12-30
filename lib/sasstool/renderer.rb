@@ -3,6 +3,7 @@ require 'forwardable'
 module Sasstool
   class Renderer
     extend Forwardable
+
     def_delegators :engine, :render, :source_map
     attr_reader :path
 
