@@ -14,10 +14,11 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/dannyben/sasstool'
   s.license     = 'MIT'
 
-  s.required_ruby_version = '>= 2.7.0'
+  s.required_ruby_version = '>= 3.2'
 
-  s.add_dependency 'colsole', '>= 0.8.1', '< 2'
-  s.add_dependency 'filewatcher', '~> 2.0'
+  s.add_dependency 'colsole', '~> 1.0'
+  s.add_dependency 'listen', '~> 3.9'
+  s.add_dependency 'logger', '~> 1.7'  # required by lietsn
   s.add_dependency 'mister_bin', '~> 0.7'
   s.add_dependency 'sassc', '~> 2.4'
 

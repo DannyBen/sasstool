@@ -1,4 +1,4 @@
-require 'filewatcher'
+require 'listen'
 
 module Sasstool
   class Command < MisterBin::Command
@@ -21,11 +21,11 @@ module Sasstool
   private
 
     def watch
-      dir = File.dirname args['INFILE']
-      glob = "#{dir}/**/*.s[ca]ss"
-      Filewatcher.new(glob).watch do
-        save
-      end
+      dir = @dir ||= File.dirname(args["INFILE"])
+      glob = /\.s[ca]ss\z/
+      l = listener(dir, glob) { save }
+      l.start
+      block_if_needed
     end
 
     def save
@@ -42,6 +42,15 @@ module Sasstool
       raise ArgumentError, 'Please provide an output directory' unless result
 
       result
+    end
+
+    def listener(dir, glob, &block)
+      Listen.to(dir, force_polling: true, latency: 3, only: glob, &block)
+    end
+
+    def block_if_needed
+      @block_thread ||= Thread.current
+      @block_thread.join if @block_thread != Thread.current
     end
   end
 end

@@ -47,17 +47,25 @@ describe Command do
 
   context 'with --watch' do
     let(:renderer) { double :renderer, save: nil }
+    let(:listener) { double(:listener, start: nil) }
     let(:glob) { 'spec/fixtures/scss/**/*.s[ca]ss' }
-    let(:filewatcher) { Filewatcher.new(glob) }
 
-    it 'watches and saves on change' do
-      allow(Filewatcher).to receive(:new).with(glob).and_return(filewatcher)
+    it 'watches and saves on change', :focus do
+      callback = nil
+
+      expect(Listen).to receive(:to) do |*args, &block|
+        callback = block
+        listener
+      end
+
+      # Expected twice, since we save on first run + on a simulated change
       expect(Renderer).to receive(:new).twice.and_return(renderer)
       expect(renderer).to receive(:save).twice
 
-      expect(filewatcher).to receive(:watch).and_yield
-
-      subject.run [infile, outdir, '--watch']
+      expect {
+        subject.run [infile, outdir, '--watch']
+        callback.call([], [], [])
+      }.to output_approval "watch"
     end
   end
 end
