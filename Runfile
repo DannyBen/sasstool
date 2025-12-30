@@ -1,8 +1,7 @@
-require "byebug"
-require 'sasstool/version'
+require "debug"
 
 title   "Sasstool Developer Toolbelt"
 summary "Runfile tasks for building the Sasstool gem"
-version Sasstool::VERSION
 
 import_gem 'runfile-tasks/gem', gemname: 'sasstool'
+import 'debug'
