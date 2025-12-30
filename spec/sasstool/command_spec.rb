@@ -61,6 +61,7 @@ describe Command do
       # Expected twice, since we save on first run + on a simulated change
       expect(Renderer).to receive(:new).twice.and_return(renderer)
       expect(renderer).to receive(:save).twice
+      expect(Blocker).to receive(:block)
 
       expect do
         subject.run [infile, outdir, '--watch']

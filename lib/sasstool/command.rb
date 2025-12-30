@@ -25,7 +25,7 @@ module Sasstool
       glob = /\.s[ca]ss\z/
       l = listener(dir, glob) { save }
       l.start
-      block_if_needed
+      Blocker.block
     end
 
     def save
