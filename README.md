@@ -1,5 +1,7 @@
 # Sasstool
 
+![repocard](https://repocard.dannyben.com/svg/sasstool.svg)
+
 Sass (SassC) command line renderer with globbing import support.
 
 ## Installation
